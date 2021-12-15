@@ -1,5 +1,5 @@
 package regles;
 
-public interface RegleUnite extends Regle {
+public interface RegleUnite {
 
 }

@@ -2,14 +2,12 @@ import implementation.EquipementBazooka;
 import implementation.EquipementFusil;
 import implementation.EquipementPistolet;
 import implementation.TroupeInfanterie;
-import regles.RegleEquipementLeger;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
 		
 		// Création des règles
-		RegleEquipementLeger r1 = new RegleEquipementLeger();
 		
 		
 		// Création des troupes
@@ -20,9 +18,9 @@ public class Main {
 		EquipementPistolet e2 = new EquipementPistolet();
 		EquipementBazooka e3 = new EquipementBazooka();
 		
-		t.AssignerEquipement(e1);
-		t.AssignerEquipement(e3);
-		t.AssignerEquipement(e2);
+		t.assignerEquipement(e1);
+		t.assignerEquipement(e2);
+		t.assignerEquipement(e3);
 	}
 
 }
