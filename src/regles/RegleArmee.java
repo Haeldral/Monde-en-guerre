@@ -1,5 +1,5 @@
 package regles;
 
-public interface RegleArmee extends Regle {
+public interface RegleArmee{
 
 }
