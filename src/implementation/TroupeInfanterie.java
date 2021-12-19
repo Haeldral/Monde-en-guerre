@@ -9,10 +9,16 @@ import regles.Regle;
 
 public class TroupeInfanterie extends Troupe {
 	
-	private LinkedList<Equipement> equipementInfanterie = new LinkedList<Equipement>(); 
+	public TroupeInfanterie() {
+		super();
+		nomTroupe = "Infanterie";
+		
+	}
+	
+	/*private LinkedList<Equipement> equipementInfanterie = new LinkedList<Equipement>(); 
 	public static Regle.typeEquipement typeEquipementAutorise = Regle.typeEquipement.LEGER;
 
-	public void assignerEquipement(Equipement equipement) {
+	/*public void assignerEquipement(Equipement equipement) {
 		
 		try {
 			if (Regle.assignerEquipement(equipement, typeEquipementAutorise)) {
@@ -23,6 +29,6 @@ public class TroupeInfanterie extends Troupe {
 			e.printStackTrace();
 		}
 
-	}
+	}*/
 	
 }

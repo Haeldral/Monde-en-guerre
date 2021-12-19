@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 import abstraction.Equipement;
 
-public abstract class RegleEquipement {
+public class RegleEquipement implements Regle{
+
+	@Override
+	public boolean verifierRegle() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }

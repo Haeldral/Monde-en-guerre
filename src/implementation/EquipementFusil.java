@@ -7,7 +7,9 @@ public class EquipementFusil extends Equipement {
 	
 	
 	public EquipementFusil(){
-		type = equipement.FUSIL;
+		super();
+		nomEquipement = "Fusil";
+		//type = equipement.BAZOOKA;
 	}
 	
 	

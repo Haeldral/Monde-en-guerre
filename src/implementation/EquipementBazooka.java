@@ -1,12 +1,14 @@
 package implementation;
 
 import abstraction.Equipement;
-import abstraction.Equipement.equipement;
+//import abstraction.Equipement.equipement;
 
 public class EquipementBazooka extends Equipement {
 
 	
 	public EquipementBazooka(){
-		type = equipement.BAZOOKA;
+		super();
+		nomEquipement = "Bazooka";
+		//type = equipement.BAZOOKA;
 	}
 }
