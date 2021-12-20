@@ -1,10 +1,14 @@
 package implementation;
 
+import java.util.ArrayList;
+
 import abstraction.Unite;
+import regles.RegleEquipement;
 
 public class UniteVehicule extends Unite {
 	
-	public UniteVehicule() {
+	public UniteVehicule(ArrayList<RegleEquipement.typeEquipement> equiUnite) {
+		super(equiUnite);
 		nomUnite = "Unite Vehicule";
 	}
 

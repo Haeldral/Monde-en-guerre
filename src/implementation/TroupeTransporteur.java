@@ -1,10 +1,14 @@
 package implementation;
 
+import java.util.ArrayList;
+
 import abstraction.Troupe;
+import regles.RegleEquipement;
 
 public class TroupeTransporteur extends Troupe {
 	
-	public TroupeTransporteur() {
+	public TroupeTransporteur(ArrayList<RegleEquipement.typeEquipement> equiUnite) {
+		super(equiUnite);
 		nomTroupe = "Troupe Transporteur";
 	}
 

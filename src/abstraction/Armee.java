@@ -3,14 +3,17 @@ package abstraction;
 import java.util.ArrayList;
 
 import regles.Regle;
+import regles.RegleEquipement;
 
 public abstract class Armee {
 	
 	protected ArrayList<Unite> listeUnite;
+	public static ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
 	protected String nomArmee;
 	
 	public Armee() {
 		listeUnite = new ArrayList<Unite>();
+		typeEquipementAutorise = new ArrayList<RegleEquipement.typeEquipement>();
 	}
 	
 	
@@ -21,6 +24,16 @@ public abstract class Armee {
 
 	public void setListeUnite(ArrayList<Unite> listeUnite) {
 		this.listeUnite = listeUnite;
+	}
+	
+
+	public static ArrayList<RegleEquipement.typeEquipement> getTypeEquipementAutorise() {
+		return typeEquipementAutorise;
+	}
+
+
+	public static void setTypeEquipementAutorise(ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise) {
+		Armee.typeEquipementAutorise = typeEquipementAutorise;
 	}
 
 

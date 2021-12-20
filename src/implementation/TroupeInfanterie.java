@@ -1,6 +1,8 @@
 package implementation;
 
 
+import java.util.ArrayList;
+
 import abstraction.Troupe;
 import regles.*;
 
@@ -8,8 +10,9 @@ import regles.*;
 
 public class TroupeInfanterie extends Troupe {
 	
-	public TroupeInfanterie () {
-		typeEquipementAutorise = RegleEquipement.typeEquipement.LEGER;
+	public TroupeInfanterie (ArrayList<RegleEquipement.typeEquipement> equiUnite) {
+		super(equiUnite);
+		typeEquipementAutorise.add(RegleEquipement.typeEquipement.LEGER);
 		nomTroupe = "Troupe Infanterie";
 	}
 	

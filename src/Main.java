@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Armee.ArmeeOrangeStar;
+import Armee.ArmeeYellowComet;
 import abstraction.*;
 import implementation.*;
 
@@ -120,13 +122,13 @@ public class Main {
 			
 			switch (choix) {
 			case 1:
-				uniteCourante = new UniteSoldat();
+				uniteCourante = new UniteSoldat(armeeCourante.getTypeEquipementAutorise());
 				choixTroupe();
 				armeeCourante.ajoutUnite(uniteCourante);
 				System.out.println("Unite creee \n");
 				break;
 			case 2:
-				uniteCourante = new UniteVehicule();
+				uniteCourante = new UniteVehicule(armeeCourante.getTypeEquipementAutorise());
 				choixTroupe();
 				armeeCourante.ajoutUnite(uniteCourante);
 				System.out.println("Unite creee \n");
@@ -163,25 +165,25 @@ public class Main {
 			
 			switch (choix) {
 			case 1:
-				troupeCourante = new TroupeInfanterie();
+				troupeCourante = new TroupeInfanterie(uniteCourante.getTypeEquipementAutorise());
 				choixEquipement();
 				uniteCourante.ajouterTroupe(troupeCourante);
 				System.out.println("Troupe creee \n");
 				break;
 			case 2:
-				troupeCourante = new TroupeBazooka();
+				troupeCourante = new TroupeBazooka(uniteCourante.getTypeEquipementAutorise());
 				choixEquipement();
 				uniteCourante.ajouterTroupe(troupeCourante);
 				System.out.println("Troupe creee \n");
 				break;
 			case 3:
-				troupeCourante = new TroupeTank();
+				troupeCourante = new TroupeTank(uniteCourante.getTypeEquipementAutorise());
 				choixEquipement();
 				uniteCourante.ajouterTroupe(troupeCourante);
 				System.out.println("Troupe creee \n");
 				break;
 			case 4:
-				troupeCourante = new TroupeTransporteur();
+				troupeCourante = new TroupeTransporteur(uniteCourante.getTypeEquipementAutorise());
 				choixEquipement();
 				uniteCourante.ajouterTroupe(troupeCourante);
 				System.out.println("Troupe creee \n");

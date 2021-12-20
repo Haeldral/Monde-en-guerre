@@ -8,15 +8,17 @@ import regles.RegleEquipement;
 public abstract class Troupe {
 
 	protected ArrayList<Equipement> listeEquipement;
-	public static RegleEquipement.typeEquipement typeEquipementAutorise;
+	public static ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
 	protected String nomTroupe;
 
-	public Troupe() {
+	public Troupe(ArrayList<RegleEquipement.typeEquipement> equiUnite) {
 		listeEquipement = new ArrayList<Equipement>();
+		typeEquipementAutorise = new ArrayList<RegleEquipement.typeEquipement>();
+		typeEquipementAutorise.addAll(equiUnite);
 	}
-	
-	
-	
+
+
+
 	public ArrayList<Equipement> getListeEquipement() {
 		return listeEquipement;
 	}
@@ -53,11 +55,24 @@ public abstract class Troupe {
 
 	public void assignerEquipement(Equipement equipement) {
 
+		boolean autorisation = false;
+
 		try {
-			if (RegleEquipement.assignerEquipement(equipement, typeEquipementAutorise)) {
+			// Test de chaque règle d'équipment
+			for(RegleEquipement.typeEquipement typeEqu : typeEquipementAutorise) {
+				if (RegleEquipement.verifierEquipement(equipement, typeEqu))
+					autorisation = true;
+			}
+
+			// Assignation
+			if (autorisation) {
 				System.out.println(equipement.type.toString()+" ajouté");
 				listeEquipement.add(equipement);
+			}else {
+				System.out.println("équipement interdit");
 			}
+
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
