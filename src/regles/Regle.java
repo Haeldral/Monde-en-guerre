@@ -8,7 +8,7 @@ import abstraction.Equipement;
 
 public class Regle {
 	
-	public enum typeEquipement {
+	/*public enum typeEquipement {
 		LEGER,
 		LOURD,
 		CEQUETUVEUX
@@ -39,6 +39,6 @@ public class Regle {
 			System.out.println("équipement interdit");
 			return false;
 		}
-	}
+	}*/
 
 }

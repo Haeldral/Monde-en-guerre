@@ -7,7 +7,10 @@ public abstract class Equipement {
 	public enum equipement {
 		FUSIL,
 		PISTOLET,
-		BAZOOKA
+		BAZOOKA,
+		MITRAILLEUSE,
+		CANON,
+		CARBURANT
 	}
 	//public equipementAutorise type = equipementAutorise.FUSIL;
 	public equipement type;

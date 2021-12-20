@@ -1,5 +1,5 @@
 package regles;
 
-public interface RegleTroupeChenille extends RegleTroupe {
+public class RegleTroupeChenille  {
 
 }

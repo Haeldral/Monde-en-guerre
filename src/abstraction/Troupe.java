@@ -3,11 +3,12 @@ package abstraction;
 import java.util.ArrayList;
 
 import regles.Regle;
+import regles.RegleEquipement;
 
 public abstract class Troupe {
 
 	protected ArrayList<Equipement> listeEquipement;
-	public static Regle.typeEquipement typeEquipementAutorise;
+	public static RegleEquipement.typeEquipement typeEquipementAutorise;
 	protected String nomTroupe;
 
 	public Troupe() {
@@ -53,7 +54,7 @@ public abstract class Troupe {
 	public void assignerEquipement(Equipement equipement) {
 
 		try {
-			if (Regle.assignerEquipement(equipement, typeEquipementAutorise)) {
+			if (RegleEquipement.assignerEquipement(equipement, typeEquipementAutorise)) {
 				System.out.println(equipement.type.toString()+" ajouté");
 				listeEquipement.add(equipement);
 			}

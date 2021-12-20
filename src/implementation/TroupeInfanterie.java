@@ -2,13 +2,14 @@ package implementation;
 
 
 import abstraction.Troupe;
-import regles.Regle;
+import regles.*;
+
 
 
 public class TroupeInfanterie extends Troupe {
 	
 	public TroupeInfanterie () {
-		typeEquipementAutorise = Regle.typeEquipement.LEGER;
+		typeEquipementAutorise = RegleEquipement.typeEquipement.LEGER;
 		nomTroupe = "Troupe Infanterie";
 	}
 	

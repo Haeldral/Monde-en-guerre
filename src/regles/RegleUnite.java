@@ -1,5 +1,5 @@
 package regles;
 
-public interface RegleUnite {
+public class RegleUnite {
 
 }
