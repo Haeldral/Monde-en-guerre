@@ -15,7 +15,7 @@ public abstract class RegleEquipement {
 	}
 	
 	public static boolean verifierEquipement(Equipement equ, typeEquipement type) throws Exception { 
-		System.out.println("print a la con");
+		
 		LinkedList<Equipement.equipement> listeEquipement = new LinkedList<Equipement.equipement>();
 		
 		switch (type) {
@@ -32,12 +32,10 @@ public abstract class RegleEquipement {
 		default:
 			throw new Exception("Erreur type d'équipement non déclaré");
 		}
-		System.out.println("print n2");
-		if (listeEquipement.contains(equ.type)) {
-			System.out.println("ok");
+		
+		if (listeEquipement.contains(equ.typeEquipement)) {
 			return true;
 		}else {
-			
 			return false;
 		}
 	}

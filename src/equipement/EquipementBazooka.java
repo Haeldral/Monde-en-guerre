@@ -7,7 +7,7 @@ public class EquipementBazooka extends Equipement {
 
 	
 	public EquipementBazooka(){
-		type = equipement.BAZOOKA;
+		typeEquipement = equipement.BAZOOKA;
 		nomEquipement = "Bazooka";
 	}
 }

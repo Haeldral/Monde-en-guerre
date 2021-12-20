@@ -6,7 +6,7 @@ import abstraction.Equipement.equipement;
 public class EquipementCanon extends Equipement {
 	
 	public EquipementCanon(){
-		type = equipement.CANON;
+		typeEquipement = equipement.CANON;
 		nomEquipement = "Canon";
 	}
 

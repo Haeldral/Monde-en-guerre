@@ -2,11 +2,22 @@ package abstraction;
 
 import java.util.ArrayList;
 
+import abstraction.Equipement.equipement;
 import regles.Regle;
 import regles.RegleEquipement;
 
 public abstract class Troupe {
-
+	
+	public enum troupe {
+		INFANTERIE,
+		BAZOOKA,
+		TANK,
+		TRANSPORTEUR,
+		INFANTERIELOURDE
+	}
+	
+	public troupe typeTroupe;
+	
 	protected ArrayList<Equipement> listeEquipement;
 	public static ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
 	protected String nomTroupe;
@@ -66,7 +77,7 @@ public abstract class Troupe {
 
 			// Assignation
 			if (autorisation) {
-				System.out.println(equipement.type.toString()+" ajouté");
+				System.out.println(equipement.typeEquipement.toString()+" ajouté");
 				listeEquipement.add(equipement);
 			}else {
 				System.out.println("équipement interdit");
