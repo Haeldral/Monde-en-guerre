@@ -11,4 +11,16 @@ public abstract class Equipement {
 	}
 	//public equipementAutorise type = equipementAutorise.FUSIL;
 	public equipement type;
+	
+	protected String nomEquipement;
+	
+	public Equipement() {
+		
+	}
+	
+	public void afficherEquipement() {
+		System.out.println("Nom de l'equipement : " + nomEquipement );
+	}
+	
+	
 }

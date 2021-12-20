@@ -7,5 +7,6 @@ public class EquipementPistolet extends Equipement {
 	
 	public EquipementPistolet(){
 		type = equipement.PISTOLET;
+		nomEquipement = "Pistolet";
 	}
 }

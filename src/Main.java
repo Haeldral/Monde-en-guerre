@@ -220,26 +220,26 @@ public class Main {
 			switch (choix) {
 			case 1:
 				equipementCourant = new EquipementFusil();
-				troupeCourante.ajouterEquipement(equipementCourant);
+				troupeCourante.assignerEquipement(equipementCourant);
 				break;
 			case 2:
 				equipementCourant = new EquipementPistolet();
-				troupeCourante.ajouterEquipement(equipementCourant);
+				troupeCourante.assignerEquipement(equipementCourant);
 				break;
 			case 3:
 				equipementCourant = new EquipementBazooka();
-				troupeCourante.ajouterEquipement(equipementCourant);
+				troupeCourante.assignerEquipement(equipementCourant);
 			case 4:
 				equipementCourant = new EquipementMitrailleuse();
-				troupeCourante.ajouterEquipement(equipementCourant);
+				troupeCourante.assignerEquipement(equipementCourant);
 				break;
 			case 5:
 				equipementCourant = new EquipementCanon();
-				troupeCourante.ajouterEquipement(equipementCourant);
+				troupeCourante.assignerEquipement(equipementCourant);
 				break;
 			case 6:
 				equipementCourant = new EquipementCarburant();
-				troupeCourante.ajouterEquipement(equipementCourant);
+				troupeCourante.assignerEquipement(equipementCourant);
 				break;
 			case 7:
 				System.out.println("Fin");
