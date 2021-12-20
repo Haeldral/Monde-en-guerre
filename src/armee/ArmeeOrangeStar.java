@@ -1,4 +1,4 @@
-package Armee;
+package armee;
 
 import abstraction.Armee;
 

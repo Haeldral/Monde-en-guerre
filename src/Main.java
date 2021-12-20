@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Armee.ArmeeOrangeStar;
-import Armee.ArmeeYellowComet;
 import abstraction.*;
-import implementation.*;
+import armee.*;
+import equipement.*;
+import troupe.*;
+import unite.*;
 
 
 

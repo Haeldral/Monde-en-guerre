@@ -1,4 +1,4 @@
-package implementation;
+package equipement;
 
 import abstraction.Equipement;
 import abstraction.Equipement.equipement;
