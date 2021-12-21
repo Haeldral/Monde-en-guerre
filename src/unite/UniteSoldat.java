@@ -12,7 +12,7 @@ public class UniteSoldat extends Unite {
 		super(equiUnite);
 		typeTroupeAutorise.add(RegleTroupe.typeTroupe.SOLDAT);
 		nomUnite = "Unite Soldat";
-		System.out.println("Constructeur fini");
+		
 	}
 
 }

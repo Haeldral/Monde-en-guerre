@@ -2,8 +2,6 @@ package abstraction;
 
 import java.util.ArrayList;
 
-import abstraction.Equipement.equipement;
-import regles.Regle;
 import regles.RegleEquipement;
 
 public abstract class Troupe {
@@ -18,9 +16,11 @@ public abstract class Troupe {
 	
 	public troupe typeTroupe;
 	
-	protected ArrayList<Equipement> listeEquipement;
-	public static ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
+	
 	protected String nomTroupe;
+	
+	protected ArrayList<Equipement> listeEquipement;
+	public  ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
 
 	public Troupe(ArrayList<RegleEquipement.typeEquipement> equiUnite) {
 		listeEquipement = new ArrayList<Equipement>();

@@ -2,15 +2,15 @@ package abstraction;
 
 import java.util.ArrayList;
 
-import regles.Regle;
+
 import regles.RegleEquipement;
 import regles.RegleTroupe;
 
 public abstract class Unite {
 
 	protected ArrayList<Troupe> listeTroupe;
-	public static ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
-	public static ArrayList<RegleTroupe.typeTroupe> typeTroupeAutorise;
+	public  ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
+	public  ArrayList<RegleTroupe.typeTroupe> typeTroupeAutorise;
 	
 	protected String nomUnite;
 	
@@ -24,8 +24,8 @@ public abstract class Unite {
 	
 	
 	// GETTERS AND SETTERS
-	public static void setTypeEquipementAutorise(ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise) {Unite.typeEquipementAutorise = typeEquipementAutorise;}
-	public static ArrayList<RegleEquipement.typeEquipement> getTypeEquipementAutorise() {return typeEquipementAutorise;}
+	public  void setTypeEquipementAutorise(ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise) {this.typeEquipementAutorise = typeEquipementAutorise;}
+	public  ArrayList<RegleEquipement.typeEquipement> getTypeEquipementAutorise() {return typeEquipementAutorise;}
 	public ArrayList<Troupe> getListeTroupe() {return listeTroupe;}
 	public void setListeTroupe(ArrayList<Troupe> listeTroupe) {this.listeTroupe = listeTroupe;}
 	
@@ -37,18 +37,17 @@ public abstract class Unite {
 	
 	
 	public boolean verifierTroupe(Troupe troupe) {
-
+		
 		boolean autorisation = false;
 	
-
 		try {
 			// Test de chaque règle d'équipement
-			for(RegleTroupe.typeTroupe typeTr : typeTroupeAutorise) {
+			for(RegleTroupe.typeTroupe typeTr : this.typeTroupeAutorise) {
+				System.out.println(troupe.typeTroupe.toString());
 				if (RegleTroupe.verifierTroupe(troupe, typeTr))
 					autorisation = true;
 			}
-			 // A CHANGER, pas le mm ordre que equipement
-			// Assignation
+			 // Vérification
 			if (autorisation) {
 				System.out.println(troupe.typeTroupe.toString()+" autorisée");
 				

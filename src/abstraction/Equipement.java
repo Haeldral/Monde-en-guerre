@@ -1,6 +1,6 @@
 package abstraction;
 
-//import regles.RegleEquipementLeger.equipementAutorise;
+
 
 public abstract class Equipement {
 	

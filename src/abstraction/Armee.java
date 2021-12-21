@@ -8,7 +8,7 @@ import regles.RegleEquipement;
 public abstract class Armee {
 	
 	protected ArrayList<Unite> listeUnite;
-	public static ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
+	public  ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
 	protected String nomArmee;
 	
 	public Armee() {
@@ -27,13 +27,13 @@ public abstract class Armee {
 	}
 	
 
-	public static ArrayList<RegleEquipement.typeEquipement> getTypeEquipementAutorise() {
+	public  ArrayList<RegleEquipement.typeEquipement> getTypeEquipementAutorise() {
 		return typeEquipementAutorise;
 	}
 
 
-	public static void setTypeEquipementAutorise(ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise) {
-		Armee.typeEquipementAutorise = typeEquipementAutorise;
+	public  void setTypeEquipementAutorise(ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise) {
+		typeEquipementAutorise = typeEquipementAutorise;
 	}
 
 
