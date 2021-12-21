@@ -12,7 +12,7 @@ public abstract class Equipement {
 		CANON,
 		CARBURANT
 	}
-	//public equipementAutorise type = equipementAutorise.FUSIL;
+	
 	public equipement typeEquipement;
 	
 	protected String nomEquipement;

@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import abstraction.Troupe;
 import regles.*;
 
-
-
 public class TroupeInfanterie extends Troupe {
 	
 	public TroupeInfanterie (ArrayList<RegleEquipement.typeEquipement> equiUnite) {

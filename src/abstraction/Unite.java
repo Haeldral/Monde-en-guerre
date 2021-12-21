@@ -35,9 +35,11 @@ public abstract class Unite {
 	public void ajouterTroupe(Troupe t) {this.listeTroupe.add(t);}
 	
 	
+	
 	public boolean verifierTroupe(Troupe troupe) {
 
 		boolean autorisation = false;
+	
 
 		try {
 			// Test de chaque règle d'équipement
@@ -48,10 +50,10 @@ public abstract class Unite {
 			 // A CHANGER, pas le mm ordre que equipement
 			// Assignation
 			if (autorisation) {
-				System.out.println(troupe.typeTroupe.toString()+" ajouté");
-				listeTroupe.add(troupe);
+				System.out.println(troupe.typeTroupe.toString()+" autorisée");
+				
 			}else {
-				System.out.println("équipement interdit");
+				System.out.println("Troupe " + troupe.typeTroupe.toString() +"  interdite pour cette unité");
 			}
 
 

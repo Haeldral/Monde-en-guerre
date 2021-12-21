@@ -6,34 +6,30 @@ import abstraction.Equipement;
 import abstraction.Troupe;
 import regles.RegleEquipement.typeEquipement;
 
-public class RegleTroupe {
+public abstract class RegleTroupe {
 	
 	public enum typeTroupe {
-		VEHICULE,
-		LOURD,
-		CEQUETUVEUX
+		SOLDAT,
+		VEHICULE
 	}
 	
-	public static boolean verifierTroupe(Troupe trou, typeTroupe type) throws Exception { 
+	public static boolean verifierTroupe(Troupe troupe, typeTroupe type) throws Exception { 
 		
 		LinkedList<Troupe.troupe> listeTroupe = new LinkedList<Troupe.troupe>();
 		
 		switch (type) {
+		case SOLDAT:
+			listeTroupe.add(Troupe.troupe.INFANTERIE);
+			listeTroupe.add(Troupe.troupe.BAZOOKA);
 		case VEHICULE:
 			listeTroupe.add(Troupe.troupe.TRANSPORTEUR);
 			listeTroupe.add(Troupe.troupe.TANK);
-			
-			break;
-		case LOURD:
-			//listeTroupe.add(Equipement.equipement.BAZOOKA);
-			break;
-		case CEQUETUVEUX:
 			break;
 		default:
 			throw new Exception("Erreur type de troupe non déclaré");
 		}
 		
-		if (listeTroupe.contains(trou.typeTroupe)) {
+		if (listeTroupe.contains(troupe.typeTroupe)) {
 			return true;
 		}else {
 			return false;

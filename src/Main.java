@@ -130,7 +130,7 @@ public class Main {
 		}while(armeeCourante.getListeUnite().size() < 2 && choix !=3 ) ;
 		
 		if(choix != 3)
-			System.out.println("Deux unites ajoutees a l'unite, retour au choix des armee \n");
+			System.out.println("Deux unités ajoutées a l'armée, retour au choix des armées \n");
 		
 	}
 	
@@ -144,35 +144,27 @@ public class Main {
 			System.out.println("Choix Troupe");
 			System.out.println(" 1 - Infanterie");
 			System.out.println(" 2 - Troupe Bazooka");
-			System.out.println(" 3 -  Tank");
-			System.out.println(" 4 -  Transporteur");
+			System.out.println(" 3 - Tank");
+			System.out.println(" 4 - Transporteur");
 			System.out.println(" 5 - Annuler \n");
 			choix = scan.nextInt();
 			
 			switch (choix) {
 			case 1:
 				troupeCourante = new TroupeInfanterie(uniteCourante.getTypeEquipementAutorise());
-				choixEquipement();
-				uniteCourante.ajouterTroupe(troupeCourante);
-				System.out.println("Troupe creee \n");
+				
 				break;
 			case 2:
 				troupeCourante = new TroupeBazooka(uniteCourante.getTypeEquipementAutorise());
-				choixEquipement();
-				uniteCourante.ajouterTroupe(troupeCourante);
-				System.out.println("Troupe creee \n");
+				
 				break;
 			case 3:
 				troupeCourante = new TroupeTank(uniteCourante.getTypeEquipementAutorise());
-				choixEquipement();
-				uniteCourante.ajouterTroupe(troupeCourante);
-				System.out.println("Troupe creee \n");
+				
 				break;
 			case 4:
 				troupeCourante = new TroupeTransporteur(uniteCourante.getTypeEquipementAutorise());
-				choixEquipement();
-				uniteCourante.ajouterTroupe(troupeCourante);
-				System.out.println("Troupe creee \n");
+				
 				break;
 			case 5:
 				System.out.println("Retour");
@@ -180,6 +172,15 @@ public class Main {
 				
 			default:
 				System.out.println(" Choix invalide, recommencez");
+			}
+			
+			
+			if( choix < 5) {
+				if(uniteCourante.verifierTroupe(troupeCourante)) {
+					choixEquipement();
+					uniteCourante.ajouterTroupe(troupeCourante);
+					System.out.println("Troupe creee \n");
+				}
 			}
 			
 		}while(uniteCourante.getListeTroupe().size() < 2 && choix !=5 ) ;
