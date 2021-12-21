@@ -2,6 +2,7 @@ package abstraction;
 
 import java.util.ArrayList;
 
+import abstraction.Equipement.equipement;
 import verificationRegles.VerificationEquipement;
 
 public abstract class Troupe {
@@ -46,17 +47,37 @@ public abstract class Troupe {
 
 	// Méthode qui vérifie si les équipements sont compatibles avec les regles et les assigne le cas échéant
 	public void assignerEquipement(Equipement equipement) {
+		boolean equipementAccepte = false;
+		boolean equipementPresent = false;
 
 		try {
-			// Test de chaque règle d'équipement
-			for(VerificationEquipement.typeEquipement typeEqu : typeEquipementAutorise) {
-				if (VerificationEquipement.verifierEquipement(equipement, typeEqu)) {
+			// Vérification si l'equipement est deja présent dans la liste d'equipement de la troupe
+			Class c = equipement.getClass();
+			for(Equipement eq : listeEquipement) {
+				if(c.isInstance(eq) )
+					equipementPresent = true;
+			}
+
+			if(!equipementPresent) {
+				// Test de chaque règle d'équipement
+				for(VerificationEquipement.typeEquipement typeEqu : typeEquipementAutorise) {
+					if (VerificationEquipement.verifierEquipement(equipement, typeEqu)) {
+						equipementAccepte = true;
+					}
+				}
+
+				if(equipementAccepte) {
 					System.out.println(equipement.typeEquipement.toString()+" ajout");
 					listeEquipement.add(equipement);
 				}
 				else
 					System.out.println("équipement interdit");
 			}
+			else
+				System.out.println("Equipement déjà présent");
+
+			
+
 
 		} catch (Exception e) {
 			e.printStackTrace();

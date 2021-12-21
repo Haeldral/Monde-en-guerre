@@ -13,7 +13,7 @@ public class Main {
 	public static final int NBARMEES = 2;
 	public static final int NBUNITES = 2;
 	public static final int NBTROUPES = 5;
-	public static final int NBEQUIPEMENTS = 7;
+	public static final int NBEQUIPEMENTS = 8;
 	
 	static Armee armeeCourante;
 	static Unite uniteCourante;
@@ -68,8 +68,8 @@ public class Main {
 		
 		do {
 			System.out.println("Choix Armee");
-			System.out.println(" 1 - ArmeeOrangeStar");
-			System.out.println(" 2 - ArmeeYellowVComet");
+			System.out.println(" 1 - Armée Orange Star");
+			System.out.println(" 2 - Armée Yellow Comet");
 			System.out.println(" 3 - Retour \n");
 			choix = scan.nextInt();
 			
@@ -155,7 +155,7 @@ public class Main {
 			System.out.println(" 3 - Troupe Bazooka");
 			System.out.println(" 4 - Tank");
 			System.out.println(" 5 - Transporteur");
-			System.out.println(" 6 - Annuler \n");
+			System.out.println(" 6 - Retour \n");
 			choix = scan.nextInt();
 			
 			switch (choix) {
@@ -217,7 +217,8 @@ public class Main {
 			System.out.println(" 5 -  Canon");
 			System.out.println(" 6 -  Carburant");
 			System.out.println(" 7 -  Mortier");
-			System.out.println(" 8 - Retour \n");
+			System.out.println(" 8 -  Caisses de ravitaillement");
+			System.out.println(" 9 - Retour \n");
 			choix = scan.nextInt();
 			
 			switch (choix) {
@@ -232,6 +233,7 @@ public class Main {
 			case 3:
 				equipementCourant = new EquipementBazooka();
 				troupeCourante.assignerEquipement(equipementCourant);
+				break;
 			case 4:
 				equipementCourant = new EquipementMitrailleuse();
 				troupeCourante.assignerEquipement(equipementCourant);
@@ -248,7 +250,12 @@ public class Main {
 				equipementCourant = new EquipementMortier();
 				troupeCourante.assignerEquipement(equipementCourant);
 				break;
-			case 8:
+				
+			case 8 : 
+				equipementCourant = new EquipementCaissesRavitaillement();
+				troupeCourante.assignerEquipement(equipementCourant);
+				break;
+			case NBEQUIPEMENTS + 1:
 				System.out.println("Fin");
 				break;
 				

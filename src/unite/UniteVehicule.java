@@ -11,6 +11,7 @@ public class UniteVehicule extends Unite {
 	public UniteVehicule(ArrayList<VerificationEquipement.typeEquipement> equiUnite) {
 		super(equiUnite);
 		typeTroupeAutorise.add(VerificationTroupe.typeTroupe.VEHICULE);
+		typeEquipementAutorise.add(VerificationEquipement.typeEquipement.EQUIPEMENTCARBURANT);
 		nomUnite = "Unite Vehicule";
 	}
 

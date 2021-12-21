@@ -11,7 +11,8 @@ public abstract class Equipement {
 		MITRAILLEUSE,
 		CANON,
 		CARBURANT, 
-		MORTIER
+		MORTIER, 
+		CAISSESDERAVITAILLEMENT
 	}
 	
 	public equipement typeEquipement;

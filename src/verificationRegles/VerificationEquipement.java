@@ -8,10 +8,11 @@ public abstract class VerificationEquipement {
 	
 	public enum typeEquipement {
 		LEGER,
-		BAZOOKA,
+		EQUIPEMENTBAZOOKA,
 		LOURD,
-		VEHICULE,
+		EQUIPEMENTCARBURANT,
 		CANON,
+		EQUIPEMENTCAISSES
 	}
 	
 	public static boolean verifierEquipement(Equipement equ, typeEquipement type) throws Exception { 
@@ -23,17 +24,22 @@ public abstract class VerificationEquipement {
 			listeEquipement.add(Equipement.equipement.FUSIL);
 			listeEquipement.add(Equipement.equipement.PISTOLET);
 			break;
-		case BAZOOKA:
+		case EQUIPEMENTBAZOOKA:
 			listeEquipement.add(Equipement.equipement.BAZOOKA);
 			break;
 		case LOURD:
 			listeEquipement.add(Equipement.equipement.MITRAILLEUSE);
 			listeEquipement.add(Equipement.equipement.MORTIER);
-		case VEHICULE:
+			break;
+		case EQUIPEMENTCARBURANT:
 			listeEquipement.add(Equipement.equipement.CARBURANT);
+			break;
+		case EQUIPEMENTCAISSES:
+			listeEquipement.add(Equipement.equipement.CAISSESDERAVITAILLEMENT);
 			break;
 		case CANON:
 			listeEquipement.add(Equipement.equipement.CANON);
+			break;
 		default:
 			throw new Exception("Erreur type d'équipement non déclaré");
 		}

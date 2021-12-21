@@ -14,8 +14,4 @@ public class TroupeInfanterie extends Troupe {
 		typeEquipementAutorise.add(VerificationEquipement.typeEquipement.LEGER);
 		nomTroupe = "Troupe Infanterie";
 	}
-	
-
-	
-	
 }
