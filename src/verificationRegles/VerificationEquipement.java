@@ -1,10 +1,10 @@
-package regles;
+package verificationRegles;
 
 import java.util.LinkedList;
 import abstraction.Equipement;
 
 
-public abstract class RegleEquipement {
+public abstract class VerificationEquipement {
 	
 	public enum typeEquipement {
 		LEGER,

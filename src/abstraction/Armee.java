@@ -2,18 +2,17 @@ package abstraction;
 
 import java.util.ArrayList;
 
-import regles.Regle;
-import regles.RegleEquipement;
+import verificationRegles.VerificationEquipement;
 
 public abstract class Armee {
 	
 	protected ArrayList<Unite> listeUnite;
-	public  ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
+	public  ArrayList<VerificationEquipement.typeEquipement> typeEquipementAutorise;
 	protected String nomArmee;
 	
 	public Armee() {
 		listeUnite = new ArrayList<Unite>();
-		typeEquipementAutorise = new ArrayList<RegleEquipement.typeEquipement>();
+		typeEquipementAutorise = new ArrayList<VerificationEquipement.typeEquipement>();
 	}
 	
 	
@@ -27,13 +26,13 @@ public abstract class Armee {
 	}
 	
 
-	public  ArrayList<RegleEquipement.typeEquipement> getTypeEquipementAutorise() {
+	public  ArrayList<VerificationEquipement.typeEquipement> getTypeEquipementAutorise() {
 		return typeEquipementAutorise;
 	}
 
 
-	public  void setTypeEquipementAutorise(ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise) {
-		typeEquipementAutorise = typeEquipementAutorise;
+	public  void setTypeEquipementAutorise(ArrayList<VerificationEquipement.typeEquipement> typeEquipementAutorise) {
+		this.typeEquipementAutorise = typeEquipementAutorise;
 	}
 
 

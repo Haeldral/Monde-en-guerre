@@ -26,6 +26,7 @@ public class Main {
 	// Fonctions de menu (affichage & choix)
 	public static void menuPrincipal() {
 		int choix =  4;
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		
 		do {
@@ -58,6 +59,7 @@ public class Main {
 	// Choix de l'armée
 	public static void choixArmee() {
 		int choix =  4;
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		
 		do {
@@ -89,7 +91,7 @@ public class Main {
 			}
 			
 		}while(choix !=3);
-		scan.close();
+		// 
 	}
 	
 	// Choix des unités
@@ -97,6 +99,7 @@ public class Main {
 	public static void choixUnite() {
 		
 		int choix =  4;
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		
 		do {
@@ -131,13 +134,14 @@ public class Main {
 		
 		if(choix != 3)
 			System.out.println("Deux unités ajoutées a l'armée, retour au choix des armées \n");
-		scan.close();
+		// 
 	}
 	
 	
 	// Choix des troupes
 	public static void choixTroupe() {
 		int choix =  6;
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		
 		do {
@@ -186,7 +190,7 @@ public class Main {
 		}while(uniteCourante.getListeTroupe().size() < 2 && choix !=5 ) ;
 		if(choix != 5)
 			System.out.println("Deux troupes ajoutees a l'unite, retour au choix des unites \n");
-		scan.close();
+		 
 	}
 	
 	
@@ -194,6 +198,7 @@ public class Main {
 	public static void choixEquipement() {
 		
 		int choix =  6;
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		
 		do {
@@ -240,7 +245,7 @@ public class Main {
 			}
 			
 		}while(choix !=7 ) ;
-		scan.close();
+		
 	}
 		
 }

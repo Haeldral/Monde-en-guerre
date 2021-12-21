@@ -22,7 +22,7 @@ public abstract class Equipement {
 	}
 	
 	public void afficherEquipement() {
-		System.out.println("Nom de l'equipement : " + nomEquipement );
+		System.out.println("Nom de l'équipement : " + nomEquipement );
 	}
 	
 	

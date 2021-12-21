@@ -3,14 +3,14 @@ package unite;
 import java.util.ArrayList;
 
 import abstraction.Unite;
-import regles.RegleEquipement;
-import regles.RegleTroupe;
+import verificationRegles.VerificationEquipement;
+import verificationRegles.VerificationTroupe;
 
 public class UniteVehicule extends Unite {
 	
-	public UniteVehicule(ArrayList<RegleEquipement.typeEquipement> equiUnite) {
+	public UniteVehicule(ArrayList<VerificationEquipement.typeEquipement> equiUnite) {
 		super(equiUnite);
-		typeTroupeAutorise.add(RegleTroupe.typeTroupe.VEHICULE);
+		typeTroupeAutorise.add(VerificationTroupe.typeTroupe.VEHICULE);
 		nomUnite = "Unite Vehicule";
 	}
 

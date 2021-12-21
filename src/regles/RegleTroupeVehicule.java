@@ -1,11 +1,11 @@
 package regles;
 
-import abstraction.Equipement;
+
 import abstraction.Troupe;
 
-public class RegleVehicule {
+public class RegleTroupeVehicule {
 	
-	public static Troupe.troupe troupeAutorise[] = 
+	public  Troupe.troupe troupeAutorise[] = 
 		{	Troupe.troupe.TRANSPORTEUR, 
 			Troupe.troupe.TANK,
 		};

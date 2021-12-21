@@ -1,9 +1,9 @@
-package regles;
+package verificationRegles;
 
 import java.util.LinkedList;
 import abstraction.Troupe;
 
-public abstract class RegleTroupe {
+public abstract class VerificationTroupe {
 	
 	public enum typeTroupe {
 		SOLDAT,

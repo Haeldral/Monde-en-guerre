@@ -3,12 +3,11 @@ package troupe;
 import java.util.ArrayList;
 
 import abstraction.Troupe;
-import abstraction.Troupe.troupe;
-import regles.RegleEquipement;
+import verificationRegles.VerificationEquipement;
 
 public class TroupeTransporteur extends Troupe {
 	
-	public TroupeTransporteur(ArrayList<RegleEquipement.typeEquipement> equiUnite) {
+	public TroupeTransporteur(ArrayList<VerificationEquipement.typeEquipement> equiUnite) {
 		super(equiUnite);
 		nomTroupe = "Troupe Transporteur";
 		typeTroupe = troupe.TRANSPORTEUR;

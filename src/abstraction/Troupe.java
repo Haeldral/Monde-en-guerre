@@ -1,10 +1,11 @@
 package abstraction;
 
 import java.util.ArrayList;
-import regles.RegleEquipement;
+
+import verificationRegles.VerificationEquipement;
 
 public abstract class Troupe {
-	
+
 	public enum troupe {
 		INFANTERIE,
 		BAZOOKA,
@@ -12,19 +13,18 @@ public abstract class Troupe {
 		TRANSPORTEUR,
 		INFANTERIELOURDE
 	}
-	
+
 	public troupe typeTroupe;
 	protected ArrayList<Equipement> listeEquipement;
-	public ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
+	public ArrayList<VerificationEquipement.typeEquipement> typeEquipementAutorise;
 	protected String nomTroupe;
-	
-	protected ArrayList<Equipement> listeEquipement;
-	public  ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
 
-	public Troupe(ArrayList<RegleEquipement.typeEquipement> equiUnite) {
+
+
+	public Troupe(ArrayList<VerificationEquipement.typeEquipement> equiUnite) {
 		listeEquipement = new ArrayList<Equipement>();
-		typeEquipementAutorise = new ArrayList<RegleEquipement.typeEquipement>();
-		typeEquipementAutorise.addAll(equiUnite);
+		typeEquipementAutorise = new ArrayList<VerificationEquipement.typeEquipement>();
+		typeEquipementAutorise.addAll(equiUnite); // On récupère les regles de l'unité choisie
 	}
 
 
@@ -33,43 +33,34 @@ public abstract class Troupe {
 	public ArrayList<Equipement> getListeEquipement() {return listeEquipement;}
 	public void setNomTroupe(String nomTroupe) {this.nomTroupe = nomTroupe;}
 	public String getNomTroupe() {return nomTroupe;}
-	
+
 
 
 	public void afficherTroupe() {
 		System.out.println("Nom de la troupe : " + nomTroupe + "\n");
-
-		System.out.println("Nombre d'ï¿½quipement(s) : " + listeEquipement.size());
+		System.out.println("Nombre d'équipement(s) : " + listeEquipement.size());
 		for(Equipement eq : listeEquipement) {
 			eq.afficherEquipement();
 		}
-
 	}
 
+	// Méthode qui vérifie si les équipements sont compatibles avec les regles et les assigne le cas échéant
 	public void assignerEquipement(Equipement equipement) {
 
-		boolean autorisation = false;
-
 		try {
-			// Test de chaque rï¿½gle d'ï¿½quipment
-			for(RegleEquipement.typeEquipement typeEqu : typeEquipementAutorise) {
-				if (RegleEquipement.verifierEquipement(equipement, typeEqu))
-					autorisation = true;
+			// Test de chaque règle d'équipement
+			for(VerificationEquipement.typeEquipement typeEqu : typeEquipementAutorise) {
+				if (VerificationEquipement.verifierEquipement(equipement, typeEqu)) {
+					System.out.println(equipement.typeEquipement.toString()+" ajout");
+					listeEquipement.add(equipement);
+				}
+				else
+					System.out.println("équipement interdit");
 			}
-
-			// Assignation
-			if (autorisation) {
-				System.out.println(equipement.typeEquipement.toString()+" ajoutï¿½");
-				listeEquipement.add(equipement);
-			}else {
-				System.out.println("ï¿½quipement interdit");
-			}
-
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }
