@@ -29,29 +29,12 @@ public abstract class Troupe {
 	}
 
 
-
-	public ArrayList<Equipement> getListeEquipement() {
-		return listeEquipement;
-	}
-
-
-
-	public void setListeEquipement(ArrayList<Equipement> listeEquipement) {
-		this.listeEquipement = listeEquipement;
-	}
-
-
-
-	public String getNomTroupe() {
-		return nomTroupe;
-	}
-
-
-
-	public void setNomTroupe(String nomTroupe) {
-		this.nomTroupe = nomTroupe;
-	}
-
+	// GETTERS AND SETTERS
+	public void setListeEquipement(ArrayList<Equipement> listeEquipement) {this.listeEquipement = listeEquipement;}
+	public ArrayList<Equipement> getListeEquipement() {return listeEquipement;}
+	public void setNomTroupe(String nomTroupe) {this.nomTroupe = nomTroupe;}
+	public String getNomTroupe() {return nomTroupe;}
+	
 
 
 	public void afficherTroupe() {
