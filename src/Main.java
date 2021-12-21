@@ -73,7 +73,6 @@ public class Main {
 				choixUnite();
 				listeArmee.add(armeeCourante);
 				System.out.println("Armee creee \n");
-				//armeeCourante = null;
 				break;
 			case 2:
 				armeeCourante = new ArmeeYellowComet();
@@ -90,6 +89,7 @@ public class Main {
 			}
 			
 		}while(choix !=3);
+		scan.close();
 	}
 	
 	// Choix des unités
@@ -109,15 +109,9 @@ public class Main {
 			switch (choix) {
 			case 1:
 				uniteCourante = new UniteSoldat(armeeCourante.getTypeEquipementAutorise());
-				choixTroupe();
-				armeeCourante.ajoutUnite(uniteCourante);
-				System.out.println("Unite creee \n");
 				break;
 			case 2:
 				uniteCourante = new UniteVehicule(armeeCourante.getTypeEquipementAutorise());
-				choixTroupe();
-				armeeCourante.ajoutUnite(uniteCourante);
-				System.out.println("Unite creee \n");
 				break;
 			case 3:
 				System.out.println("Retour");
@@ -127,11 +121,17 @@ public class Main {
 				System.out.println(" Choix invalide, recommencez");
 			}
 			
+			if (choix <3) {
+				choixTroupe();
+				armeeCourante.ajoutUnite(uniteCourante);
+				System.out.println("Unite creee \n");
+			}
+			
 		}while(armeeCourante.getListeUnite().size() < 2 && choix !=3 ) ;
 		
 		if(choix != 3)
 			System.out.println("Deux unités ajoutées a l'armée, retour au choix des armées \n");
-		
+		scan.close();
 	}
 	
 	
@@ -186,6 +186,7 @@ public class Main {
 		}while(uniteCourante.getListeTroupe().size() < 2 && choix !=5 ) ;
 		if(choix != 5)
 			System.out.println("Deux troupes ajoutees a l'unite, retour au choix des unites \n");
+		scan.close();
 	}
 	
 	
@@ -239,6 +240,7 @@ public class Main {
 			}
 			
 		}while(choix !=7 ) ;
+		scan.close();
 	}
 		
 }

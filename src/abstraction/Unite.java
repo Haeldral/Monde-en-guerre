@@ -1,16 +1,14 @@
 package abstraction;
 
 import java.util.ArrayList;
-
-import regles.Regle;
 import regles.RegleEquipement;
 import regles.RegleTroupe;
 
 public abstract class Unite {
 
 	protected ArrayList<Troupe> listeTroupe;
-	public static ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
-	public static ArrayList<RegleTroupe.typeTroupe> typeTroupeAutorise;
+	public ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
+	public ArrayList<RegleTroupe.typeTroupe> typeTroupeAutorise;
 	
 	protected String nomUnite;
 	
@@ -24,8 +22,8 @@ public abstract class Unite {
 	
 	
 	// GETTERS AND SETTERS
-	public static void setTypeEquipementAutorise(ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise) {Unite.typeEquipementAutorise = typeEquipementAutorise;}
-	public static ArrayList<RegleEquipement.typeEquipement> getTypeEquipementAutorise() {return typeEquipementAutorise;}
+	public void setTypeEquipementAutorise(ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise) {this.typeEquipementAutorise = typeEquipementAutorise;}
+	public ArrayList<RegleEquipement.typeEquipement> getTypeEquipementAutorise() {return typeEquipementAutorise;}
 	public ArrayList<Troupe> getListeTroupe() {return listeTroupe;}
 	public void setListeTroupe(ArrayList<Troupe> listeTroupe) {this.listeTroupe = listeTroupe;}
 	
@@ -37,25 +35,24 @@ public abstract class Unite {
 	
 	
 	public boolean verifierTroupe(Troupe troupe) {
-
+		System.out.println(this.typeTroupeAutorise.toString());
 		boolean autorisation = false;
-	
-
 		try {
-			// Test de chaque règle d'équipement
-			for(RegleTroupe.typeTroupe typeTr : typeTroupeAutorise) {
-				if (RegleTroupe.verifierTroupe(troupe, typeTr))
+			// Test de chaque règle de troupe
+			for(RegleTroupe.typeTroupe typeTr : this.typeTroupeAutorise) {
+				System.out.println(typeTr);
+				if (RegleTroupe.verifierTroupe(troupe, typeTr)) {
+					System.out.println("wololo");
 					autorisation = true;
+				}
 			}
-			 // A CHANGER, pas le mm ordre que equipement
-			// Assignation
+			// Validation Assignation
 			if (autorisation) {
 				System.out.println(troupe.typeTroupe.toString()+" autorisée");
 				
 			}else {
 				System.out.println("Troupe " + troupe.typeTroupe.toString() +"  interdite pour cette unité");
 			}
-
 
 		} catch (Exception e) {
 			e.printStackTrace();

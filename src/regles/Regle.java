@@ -1,10 +1,4 @@
 package regles;
-// Test si je peut commit 
-
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.lang.reflect.*;
-import abstraction.Equipement;
 
 public class Regle {
 	

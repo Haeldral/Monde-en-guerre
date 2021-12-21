@@ -1,10 +1,7 @@
 package regles;
 
 import java.util.LinkedList;
-
-import abstraction.Equipement;
 import abstraction.Troupe;
-import regles.RegleEquipement.typeEquipement;
 
 public abstract class RegleTroupe {
 	
