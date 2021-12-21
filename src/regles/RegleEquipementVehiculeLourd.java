@@ -2,8 +2,6 @@ package regles;
 
 import abstraction.Equipement;
 
-
-
 public class RegleEquipementVehiculeLourd{
 	
 	public  Equipement.equipement equipementAutorise[] = 

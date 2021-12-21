@@ -10,7 +10,8 @@ public abstract class Equipement {
 		BAZOOKA,
 		MITRAILLEUSE,
 		CANON,
-		CARBURANT
+		CARBURANT, 
+		MORTIER
 	}
 	
 	public equipement typeEquipement;

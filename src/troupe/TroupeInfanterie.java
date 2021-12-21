@@ -1,6 +1,5 @@
 package troupe;
 
-
 import java.util.ArrayList;
 
 import abstraction.Troupe;

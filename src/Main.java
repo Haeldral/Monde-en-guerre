@@ -10,6 +10,10 @@ import unite.*;
 
 
 public class Main {
+	public static final int NBARMEES = 2;
+	public static final int NBUNITES = 2;
+	public static final int NBTROUPES = 5;
+	public static final int NBEQUIPEMENTS = 7;
 	
 	static Armee armeeCourante;
 	static Unite uniteCourante;
@@ -90,7 +94,7 @@ public class Main {
 				System.out.println(" Choix invalide, recommencez");
 			}
 			
-		}while(choix !=3);
+		}while(choix !=NBARMEES + 1);
 		// 
 	}
 	
@@ -105,7 +109,7 @@ public class Main {
 		do {
 			System.out.println("Choix unite");
 			System.out.println(" 1 - Soldats");
-			System.out.println(" 2 - Transport");
+			System.out.println(" 2 - Véhicules");
 			System.out.println(" 3 - Retour \n");
 			choix = scan.nextInt();
 			
@@ -124,13 +128,13 @@ public class Main {
 				System.out.println(" Choix invalide, recommencez");
 			}
 			
-			if (choix <3) {
+			if (choix <NBUNITES +1) {
 				choixTroupe();
 				armeeCourante.ajoutUnite(uniteCourante);
 				System.out.println("Unite creee \n");
 			}
 			
-		}while(armeeCourante.getListeUnite().size() < 2 && choix !=3 ) ;
+		}while(armeeCourante.getListeUnite().size() < 2 && choix !=NBUNITES + 1 ) ;
 		
 		if(choix != 3)
 			System.out.println("Deux unités ajoutées a l'armée, retour au choix des armées \n");
@@ -147,30 +151,35 @@ public class Main {
 		do {
 			System.out.println("Choix Troupe");
 			System.out.println(" 1 - Infanterie");
-			System.out.println(" 2 - Troupe Bazooka");
-			System.out.println(" 3 - Tank");
-			System.out.println(" 4 - Transporteur");
-			System.out.println(" 5 - Annuler \n");
+			System.out.println(" 2 - Infanterie Lourde");
+			System.out.println(" 3 - Troupe Bazooka");
+			System.out.println(" 4 - Tank");
+			System.out.println(" 5 - Transporteur");
+			System.out.println(" 6 - Annuler \n");
 			choix = scan.nextInt();
 			
 			switch (choix) {
 			case 1:
 				troupeCourante = new TroupeInfanterie(uniteCourante.getTypeEquipementAutorise());
-				
 				break;
+				
 			case 2:
-				troupeCourante = new TroupeBazooka(uniteCourante.getTypeEquipementAutorise());
-				
+				troupeCourante = new TroupeInfanterieLourde(uniteCourante.getTypeEquipementAutorise());
 				break;
+				
 			case 3:
-				troupeCourante = new TroupeTank(uniteCourante.getTypeEquipementAutorise());
-				
+				troupeCourante = new TroupeBazooka(uniteCourante.getTypeEquipementAutorise());
 				break;
+				
 			case 4:
-				troupeCourante = new TroupeTransporteur(uniteCourante.getTypeEquipementAutorise());
-				
+				troupeCourante = new TroupeTank(uniteCourante.getTypeEquipementAutorise());
 				break;
+				
 			case 5:
+				troupeCourante = new TroupeTransporteur(uniteCourante.getTypeEquipementAutorise());
+				break;
+				
+			case 6:
 				System.out.println("Retour");
 				break;
 				
@@ -179,7 +188,7 @@ public class Main {
 			}
 			
 			
-			if( choix < 5) {
+			if( choix < 6) {
 				if(uniteCourante.verifierTroupe(troupeCourante)) {
 					choixEquipement();
 					uniteCourante.ajouterTroupe(troupeCourante);
@@ -187,12 +196,10 @@ public class Main {
 				}
 			}
 			
-		}while(uniteCourante.getListeTroupe().size() < 2 && choix !=5 ) ;
-		if(choix != 5)
+		}while(uniteCourante.getListeTroupe().size() < 2 && choix !=NBTROUPES + 1 ) ;
+		if(choix != NBTROUPES + 1 )
 			System.out.println("Deux troupes ajoutees a l'unite, retour au choix des unites \n");
-		 
 	}
-	
 	
 	// Choix des équipements
 	public static void choixEquipement() {
@@ -209,7 +216,8 @@ public class Main {
 			System.out.println(" 4 -  Mitrailleuse");
 			System.out.println(" 5 -  Canon");
 			System.out.println(" 6 -  Carburant");
-			System.out.println(" 7 - Retour \n");
+			System.out.println(" 7 -  Mortier");
+			System.out.println(" 8 - Retour \n");
 			choix = scan.nextInt();
 			
 			switch (choix) {
@@ -237,6 +245,10 @@ public class Main {
 				troupeCourante.assignerEquipement(equipementCourant);
 				break;
 			case 7:
+				equipementCourant = new EquipementMortier();
+				troupeCourante.assignerEquipement(equipementCourant);
+				break;
+			case 8:
 				System.out.println("Fin");
 				break;
 				
@@ -244,7 +256,7 @@ public class Main {
 				System.out.println(" Choix invalide, recommencez");
 			}
 			
-		}while(choix !=7 ) ;
+		}while(choix !=NBEQUIPEMENTS + 1 ) ;
 		
 	}
 		
