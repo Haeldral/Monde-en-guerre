@@ -19,6 +19,7 @@ public abstract class VerificationTroupe {
 			listeTroupe.add(Troupe.troupe.INFANTERIE);
 			listeTroupe.add(Troupe.troupe.BAZOOKA);
 			listeTroupe.add(Troupe.troupe.INFANTERIELOURDE);
+			break;
 		case VEHICULE:
 			listeTroupe.add(Troupe.troupe.TRANSPORTEUR);
 			listeTroupe.add(Troupe.troupe.TANK);
