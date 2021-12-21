@@ -11,6 +11,7 @@ public abstract class RegleEquipement {
 	public enum typeEquipement {
 		LEGER,
 		LOURD,
+		VEHICULELOURD,
 		CEQUETUVEUX
 	}
 	
