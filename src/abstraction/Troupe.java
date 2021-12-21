@@ -1,7 +1,6 @@
 package abstraction;
 
 import java.util.ArrayList;
-
 import regles.RegleEquipement;
 
 public abstract class Troupe {
@@ -15,8 +14,8 @@ public abstract class Troupe {
 	}
 	
 	public troupe typeTroupe;
-	
-	
+	protected ArrayList<Equipement> listeEquipement;
+	public ArrayList<RegleEquipement.typeEquipement> typeEquipementAutorise;
 	protected String nomTroupe;
 	
 	protected ArrayList<Equipement> listeEquipement;
@@ -40,7 +39,7 @@ public abstract class Troupe {
 	public void afficherTroupe() {
 		System.out.println("Nom de la troupe : " + nomTroupe + "\n");
 
-		System.out.println("Nombre d'équipement(s) : " + listeEquipement.size());
+		System.out.println("Nombre d'ï¿½quipement(s) : " + listeEquipement.size());
 		for(Equipement eq : listeEquipement) {
 			eq.afficherEquipement();
 		}
@@ -52,7 +51,7 @@ public abstract class Troupe {
 		boolean autorisation = false;
 
 		try {
-			// Test de chaque règle d'équipment
+			// Test de chaque rï¿½gle d'ï¿½quipment
 			for(RegleEquipement.typeEquipement typeEqu : typeEquipementAutorise) {
 				if (RegleEquipement.verifierEquipement(equipement, typeEqu))
 					autorisation = true;
@@ -60,10 +59,10 @@ public abstract class Troupe {
 
 			// Assignation
 			if (autorisation) {
-				System.out.println(equipement.typeEquipement.toString()+" ajouté");
+				System.out.println(equipement.typeEquipement.toString()+" ajoutï¿½");
 				listeEquipement.add(equipement);
 			}else {
-				System.out.println("équipement interdit");
+				System.out.println("ï¿½quipement interdit");
 			}
 
 

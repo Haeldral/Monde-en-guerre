@@ -13,6 +13,7 @@ public class TroupeInfanterie extends Troupe {
 		typeTroupe = typeTroupe.INFANTERIE;
 		typeEquipementAutorise.add(RegleEquipement.typeEquipement.LEGER);
 		nomTroupe = "Troupe Infanterie";
+		typeTroupe = troupe.INFANTERIE;
 	}
 	
 

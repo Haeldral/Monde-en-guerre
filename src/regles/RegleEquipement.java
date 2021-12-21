@@ -1,7 +1,6 @@
 package regles;
 
 import java.util.LinkedList;
-
 import abstraction.Equipement;
 
 
